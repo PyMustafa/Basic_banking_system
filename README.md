@@ -3,6 +3,7 @@
 ## INDEX
 
 - [Description](#Description)
+- [LinkedIn Video Demo](#LinkedIn Video Demo)
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Screenshots](#Screenshots)
@@ -14,6 +15,12 @@
 - The project simulates a simple banking system where users can view a list of customers, transfer money between customers, and view transaction history.
 - The project includes two main tables, 'customer' and 'transaction,' which contain relevant details.
 - The website is responsive, compatible with various browsers, and mobile/tablet-friendly.
+
+## LinkedIn Video Demo
+
+Check out a demo of the project on LinkedIn: [LinkedIn Video Demo](https://www.linkedin.com/posts/mustafaahassan_thesparksfoundation-webdevelopment-internship-activity-7110183314832932864-12pf?utm_source=share&utm_medium=member_desktop)
+
+Feel free to watch the video to see the project in action and leave your comments or feedback. Your thoughts are greatly appreciated!
 
 ## Requirements
 
