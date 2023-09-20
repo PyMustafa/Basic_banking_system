@@ -3,7 +3,7 @@
 ## INDEX
 
 - [Description](#description)
-- [LinkedIn Video Demo](#linkedin-video-demo)
+- [Demo](#linkedin-video-demo)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Screenshots](#screenshots)
