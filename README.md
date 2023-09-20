@@ -2,11 +2,11 @@
 
 ## INDEX
 
-- [Description](#Description)
-- [LinkedIn Video Demo](#LinkedIn Video Demo)
-- [Requirements](#Requirements)
-- [Installation](#Installation)
-- [Screenshots](#Screenshots)
+- [Description](#description)
+- [LinkedIn Video Demo](#linkedin-video-demo)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
 
 ## Description
 
