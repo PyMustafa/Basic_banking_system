@@ -1,0 +1,142 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/customers.css' %}">
+{% endblock%}
+
+{% block title %}Customers{% endblock title %}
+
+{% block content %}
+<div class="dad" id="blur">
+   <div class="landing">
+   </div>
+   <div class="content">
+      <div class="container">
+         <div class="row justify-content-center mb-4">
+            <div class="col-auto">
+               <div class="messages-card">
+                  {% if messages %}
+                  <ul class="messages">
+                     {% for message in messages %}
+                     <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                  </ul>
+                  {% endif %}
+               </div>
+               <h1 style="color: #009879;">Customer List</h1>
+               <table class="content-table mb-4">
+                  <thead>
+                     <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <!-- <th>E-mail</th> -->
+                        <th>Balance</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {% for customer in customers %}
+                     <tr>
+                        <td>{{ customer.id }}</td>
+                        <td>
+                           <div class="cast"
+                              onclick="toggle('{{ customer.first_name }} {{ customer.last_name }}', '{{ customer.id }}', '{{ customer.email }}', '{{ customer.balance }}')">
+                              {{ customer.first_name }} {{ customer.last_name }}
+
+                           </div>
+                        </td>
+                        <!-- <td>{{ customer.email }}</td> -->
+                        <td>{{ customer.balance }}</td>
+                     </tr>
+                     {% empty %}
+                     <tr>
+                        <td colspan="4">No customers found.</td>
+                     </tr>
+                     {% endfor %}
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>
+
+<div class="popup">
+   <i class="fa-regular fa-circle-xmark close-icon" onclick="closePopup()" style="color: #007b6e;"></i>
+   <h2 id="customer-name">Customer Name</h2>
+   <p><strong>ID:</strong> <span id="customer-id">0</span></p>
+   <p><strong>Email:</strong> <span id="customer-email">customer@example.com</span></p>
+   <p><strong>Balance:</strong> $<span id="customer-balance">0.00</span></p>
+   <button class="send-money-button" onclick="openSendMoneyPopup('')">Send Money</button>
+
+   <!-- this is the second popup for sending money -->
+   <div class="send-money-popup">
+      <i class="fa-regular fa-circle-xmark close-icon" onclick="closeSendMoneyPopup()" style="color: #007b6e;"></i>
+      <form action="{% url 'customers' %}" method="POST">
+         {% csrf_token %}
+         <label for="sender">Sender:</label>
+         <input type="text" name="sender" id="sender-name" class="custom-input" readonly>
+         <label for="receiver">Receiver:</label>
+         <select id="receiver" name="receiver" required>
+            <option value="" disabled selected>Select Receiver</option>
+            {% for customer in customers %}
+            <option value="{{ customer.id }}">{{ customer.first_name }} {{ customer.last_name }}</option>
+            {% endfor %}
+         </select>
+
+         <label for="amount">Amount:</label>
+         <input type="number" id="amount" name="amount" step="0.01" placeholder="Enter Amount" required>
+         <button type="submit">Send Money</button>
+      </form>
+   </div>
+</div>
+
+
+
+<script>
+   function toggle(customerName, customerId, customerEmail, customerBalance) {
+      var blur = document.getElementById("blur");
+      blur.classList.toggle("active");
+
+      var popup = document.querySelector(".popup");
+      popup.classList.toggle("active");
+
+      // Set the content of the popup card
+      document.getElementById("customer-id").textContent = customerId;
+      document.getElementById("customer-name").textContent = customerName;
+      document.getElementById("customer-email").textContent = customerEmail;
+      document.getElementById("customer-balance").textContent = customerBalance;
+   }
+
+   function closePopup() {
+      var blur = document.getElementById("blur");
+      blur.classList.remove("active");
+
+      var popup = document.querySelector(".popup");
+      popup.classList.remove("active");
+   }
+
+   function openSendMoneyPopup() {
+      senderName = document.getElementById("customer-name").textContent
+      senderId = document.getElementById("customer-id").textContent
+      senderEmail = document.getElementById("customer-email").textContent
+      senderBalance = document.getElementById("customer-balance").textContent
+
+      var sendMoneyPopup = document.querySelector(".send-money-popup");
+      sendMoneyPopup.classList.toggle("active");
+      document.getElementById("sender-name").value = senderName
+
+   }
+
+
+   function closeSendMoneyPopup() {
+      var sendMoneyPopup = document.querySelector(".send-money-popup");
+      sendMoneyPopup.classList.remove("active");
+   }
+
+
+</script>
+
+{% endblock content%}

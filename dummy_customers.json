@@ -1,0 +1,62 @@
+[
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "balance": 1500.00
+    },
+    {
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "email": "alice.smith@example.com",
+        "balance": 2200.50
+    },
+    {
+        "first_name": "Bob",
+        "last_name": "Johnson",
+        "email": "bob.johnson@example.com",
+        "balance": 1800.75
+    },
+    {
+        "first_name": "Emily",
+        "last_name": "Brown",
+        "email": "emily.brown@example.com",
+        "balance": 1350.25
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Wilson",
+        "email": "michael.wilson@example.com",
+        "balance": 2000.00
+    },
+    {
+        "first_name": "Sophia",
+        "last_name": "Lee",
+        "email": "sophia.lee@example.com",
+        "balance": 2500.50
+    },
+    {
+        "first_name": "David",
+        "last_name": "Anderson",
+        "email": "david.anderson@example.com",
+        "balance": 1600.75
+    },
+    {
+        "first_name": "Olivia",
+        "last_name": "Martinez",
+        "email": "olivia.martinez@example.com",
+        "balance": 1750.25
+    },
+    {
+        "first_name": "William",
+        "last_name": "Taylor",
+        "email": "william.taylor@example.com",
+        "balance": 2300.00
+    },
+    {
+        "first_name": "Emma",
+        "last_name": "Harris",
+        "email": "emma.harris@example.com",
+        "balance": 1900.50
+    }
+]

@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="landing">
+    <div class="intro-text">
+      <h1>Hello There</h1>
+      <p>Welcome to GRIP Banking System</p>
+    </div>
+  </div>
+<div class="features">
+    <div class="container">
+      <div class="feat">
+          <a href="{% url 'customers' %}"><i class="fa-solid fa-users-between-lines fa-4x"></i></a>
+        <h3>All Customers</h3>
+        <p>See all customers and thier details</p>
+      </div>
+      <div class="feat">
+        <!-- <a href="#"><i class="fas fa-globe-asia fa-4x"></i></a> -->
+        <a href="{% url 'transactions' %}"><i class="fa-solid fa-money-bill-transfer fa-4x"></i></a>
+        <h3>Transfers History</h3>
+        <p>See all transfers history and details</p>
+      </div>
+    </div>
+  </div>
+{% endblock content%}

@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/customers.css' %}">
+{% endblock%}
+
+{% block title %}Transactions History{% endblock title %}
+
+{% block content %}
+<div class="dad" id="blur">
+   <div class="landing">
+   </div>
+   <div class="content">
+      <div class="container">
+         <div class="row justify-content-center mb-4 mt-4">
+            <div class="col-auto">
+               <h1 style="color: #009879;">Transactions History</h1>
+               <table class="content-table mb-4 mt-4">
+                  <thead>
+                     <tr>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Amount</th>
+                        <th>Time</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {% for transaction in transactions %}
+                     <tr>
+                        <td>{{ transaction.sender }}</td>
+                        <td>{{ transaction.receiver }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.timestamp }}</td>
+                     </tr>
+                     {% empty %}
+                     <tr>
+                        <td colspan="4">No transactions found.</td>
+                     </tr>
+                     {% endfor %}
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock content %}
