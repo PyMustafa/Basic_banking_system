@@ -1,13 +1,14 @@
 from django.db import models
+import uuid
 
 # Create your models here.
 from django.db import models
 
 class Customer(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     transaction_history = models.ManyToManyField('Transactions', related_name='related_customers', blank=True)
 

@@ -29,6 +29,7 @@
                <table class="content-table mb-4">
                   <thead>
                      <tr>
+                        <th>No.</th>
                         <th>Id</th>
                         <th>Name</th>
                         <!-- <th>E-mail</th> -->
@@ -38,6 +39,8 @@
                   <tbody>
                      {% for customer in customers %}
                      <tr>
+
+                        <td>{{ forloop.counter }}</td>
                         <td>{{ customer.id }}</td>
                         <td>
                            <div class="cast"
@@ -77,6 +80,7 @@
       <form action="{% url 'customers' %}" method="POST">
          {% csrf_token %}
          <label for="sender">Sender:</label>
+         <input type="hidden" id="sender-id" name="sender_id">
          <input type="text" name="sender" id="sender-name" class="custom-input" readonly>
          <label for="receiver">Receiver:</label>
          <select id="receiver" name="receiver" required>
@@ -119,24 +123,20 @@
    }
 
    function openSendMoneyPopup() {
-      senderName = document.getElementById("customer-name").textContent
-      senderId = document.getElementById("customer-id").textContent
-      senderEmail = document.getElementById("customer-email").textContent
-      senderBalance = document.getElementById("customer-balance").textContent
+      var senderName = document.getElementById("customer-name").textContent;
+      var senderId = document.getElementById("customer-id").textContent;
 
       var sendMoneyPopup = document.querySelector(".send-money-popup");
       sendMoneyPopup.classList.toggle("active");
-      document.getElementById("sender-name").value = senderName
 
+      document.getElementById("sender-name").value = senderName;
+      document.getElementById("sender-id").value = senderId;
    }
-
 
    function closeSendMoneyPopup() {
       var sendMoneyPopup = document.querySelector(".send-money-popup");
       sendMoneyPopup.classList.remove("active");
    }
-
-
 </script>
 
 {% endblock content%}

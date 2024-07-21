@@ -16,12 +16,19 @@
         <h3>All Customers</h3>
         <p>See all customers and thier details</p>
       </div>
+
       <div class="feat">
-        <!-- <a href="#"><i class="fas fa-globe-asia fa-4x"></i></a> -->
         <a href="{% url 'transactions' %}"><i class="fa-solid fa-money-bill-transfer fa-4x"></i></a>
-        <h3>Transfers History</h3>
+        <h3>Transfers Historys</h3>
         <p>See all transfers history and details</p>
       </div>
+
+      <div class="feat">
+        <a href="{% url 'import_customers' %}"><i class="fa-solid fa-user-plus fa-4x"></i></a>
+        <h3>Import Customers</h3>
+        <p>Import customers from CSV, JSON or Excel files</p>
+      </div>
+
     </div>
   </div>
 {% endblock content%}
