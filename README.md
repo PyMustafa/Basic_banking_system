@@ -11,6 +11,7 @@
 
 - The Basic Banking System is a web application developed using Django.
 - The project simulates a simple banking system where users can view a list of customers, transfer money between customers, **import customers from an existing (CSV, JSON, Excel) file** and view transaction history.
+  - using Django's transactions to ensure that all database operations are performed in a single transaction. This means if any error occurs during the import, all changes will be rolled back.
 - The project includes two main tables, 'customer' and 'transaction,' which contain relevant details.
 - The website is responsive, compatible with various browsers, and mobile/tablet-friendly.
 
@@ -18,7 +19,6 @@
 
 - Python 3.11
 - Django 4.2.5
-- A modern web browser (Chrome recommended)
 
 ## Installation
 
