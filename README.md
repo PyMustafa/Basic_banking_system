@@ -10,8 +10,7 @@
 ## Description
 
 - The Basic Banking System is a web application developed using Django.
-- This project is a part of The Sparks Foundation Graduate Rotational Internship Program (GRIP) - September 2023.
-- The project simulates a simple banking system where users can view a list of customers, transfer money between customers, and view transaction history.
+- The project simulates a simple banking system where users can view a list of customers, transfer money between customers, import customers from an existing (CSV, JSON, Excel) file and view transaction history.
 - The project includes two main tables, 'customer' and 'transaction,' which contain relevant details.
 - The website is responsive, compatible with various browsers, and mobile/tablet-friendly.
 
